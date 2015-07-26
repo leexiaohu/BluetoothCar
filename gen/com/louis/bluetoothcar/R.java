@@ -68,7 +68,9 @@ public final class R {
         public static final int mcar=0x7f020011;
     }
     public static final class id {
-        public static final int action_settings=0x7f0c0010;
+        public static final int action_discoverable=0x7f0c0011;
+        public static final int action_exit=0x7f0c0013;
+        public static final int action_settings=0x7f0c0012;
         public static final int bottomText1=0x7f0c0007;
         public static final int bottomText2=0x7f0c0008;
         public static final int button_down=0x7f0c000e;
@@ -76,12 +78,13 @@ public final class R {
         public static final int button_right=0x7f0c000d;
         public static final int button_stop=0x7f0c000c;
         public static final int button_up=0x7f0c000a;
+        public static final int frame_settings=0x7f0c000f;
         public static final int launch=0x7f0c0004;
         public static final int launchBottom=0x7f0c0006;
         public static final int launchImage=0x7f0c0005;
         public static final int new_devices=0x7f0c0003;
         public static final int paired_devices=0x7f0c0001;
-        public static final int secure_connect_scan=0x7f0c000f;
+        public static final int secure_connect_scan=0x7f0c0010;
         public static final int textView1=0x7f0c0009;
         public static final int title_new_devices=0x7f0c0002;
         public static final int title_paired_devices=0x7f0c0000;
@@ -90,53 +93,69 @@ public final class R {
         public static final int activity_devices=0x7f030000;
         public static final int activity_launcher=0x7f030001;
         public static final int activity_main=0x7f030002;
-        public static final int device=0x7f030003;
+        public static final int activity_settings=0x7f030003;
+        public static final int device=0x7f030004;
     }
     public static final class menu {
         public static final int main=0x7f0b0000;
     }
     public static final class string {
-        public static final int action_settings=0x7f080002;
+        public static final int action_discoverale=0x7f080002;
+        public static final int action_exit=0x7f08000a;
+        public static final int action_setting=0x7f080009;
         /**  Gloable 
          */
         public static final int app_name=0x7f080000;
         public static final int copyright=0x7f080001;
         /**  DevicesActivity 
          */
-        public static final int hello_world=0x7f080009;
-        public static final int none_found=0x7f08000c;
-        public static final int none_paired_device=0x7f08000b;
-        public static final int pref_default_display_name=0x7f080012;
-        public static final int pref_description_social_recommendations=0x7f080010;
+        public static final int hello_world=0x7f08000b;
+        public static final int none_found=0x7f08000e;
+        public static final int none_paired_device=0x7f08000d;
+        public static final int pref_default_display_name=0x7f080014;
+        public static final int pref_default_down_commond=0x7f080024;
+        public static final int pref_default_left_commond=0x7f080026;
+        public static final int pref_default_right_commond=0x7f080028;
+        public static final int pref_default_stop_commond=0x7f08002a;
+        public static final int pref_default_up_commond=0x7f080022;
+        public static final int pref_description_social_recommendations=0x7f080012;
         /**  Example settings for Data & Sync 
          */
-        public static final int pref_header_data_sync=0x7f080014;
+        public static final int pref_header_data_sync=0x7f080016;
         /**  Strings related to Settings 
  Example General settings 
          */
-        public static final int pref_header_general=0x7f08000e;
+        public static final int pref_header_general=0x7f080010;
         /**  Example settings for Notifications 
          */
-        public static final int pref_header_notifications=0x7f080017;
-        public static final int pref_ringtone_silent=0x7f08001a;
-        public static final int pref_title_add_friends_to_messages=0x7f080013;
-        public static final int pref_title_display_name=0x7f080011;
-        public static final int pref_title_new_message_notifications=0x7f080018;
-        public static final int pref_title_ringtone=0x7f080019;
-        public static final int pref_title_social_recommendations=0x7f08000f;
-        public static final int pref_title_sync_frequency=0x7f080015;
-        public static final int pref_title_system_sync_settings=0x7f080016;
-        public static final int pref_title_vibrate=0x7f08001b;
+        public static final int pref_header_notifications=0x7f080019;
+        public static final int pref_ringtone_silent=0x7f08001c;
+        public static final int pref_title_add_friends_to_messages=0x7f080015;
+        public static final int pref_title_display_name=0x7f080013;
+        public static final int pref_title_down_commond=0x7f080023;
+        public static final int pref_title_left_commond=0x7f080025;
+        public static final int pref_title_new_message_notifications=0x7f08001a;
+        public static final int pref_title_right_commond=0x7f080027;
+        public static final int pref_title_ringtone=0x7f08001b;
+        public static final int pref_title_social_recommendations=0x7f080011;
+        public static final int pref_title_stop_commond=0x7f080029;
+        public static final int pref_title_sync_frequency=0x7f080017;
+        public static final int pref_title_system_sync_settings=0x7f080018;
+        public static final int pref_title_up_commond=0x7f080021;
+        public static final int pref_title_vibrate=0x7f08001d;
         public static final int scan_device=0x7f080004;
-        public static final int scanning=0x7f08000a;
+        public static final int scanning=0x7f08000c;
         public static final int select_device=0x7f080005;
         /**  MainActivity 
          */
         public static final int title_activity_main=0x7f080003;
-        public static final int title_activity_settings=0x7f08000d;
+        public static final int title_activity_settings=0x7f08000f;
+        public static final int title_allow_typedefine_commond=0x7f080020;
         public static final int title_connected_to=0x7f080008;
         public static final int title_connecting=0x7f080007;
         public static final int title_not_connected=0x7f080006;
+        public static final int title_setting_commond=0x7f08001e;
+        public static final int title_settings_system=0x7f08001f;
     }
     public static final class style {
         /** 
@@ -166,9 +185,6 @@ public final class R {
         public static final int AppTheme=0x7f0a0001;
     }
     public static final class xml {
-        public static final int pref_data_sync=0x7f050000;
-        public static final int pref_general=0x7f050001;
-        public static final int pref_headers=0x7f050002;
-        public static final int pref_notification=0x7f050003;
+        public static final int preference=0x7f050000;
     }
 }

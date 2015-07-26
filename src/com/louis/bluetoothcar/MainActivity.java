@@ -1,14 +1,20 @@
 package com.louis.bluetoothcar;
 
 import java.util.concurrent.ScheduledExecutorService;
+
+import com.louis.bluetoothcar.utils.BytesUtils;
+
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.preference.PreferenceManager;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -35,11 +41,15 @@ public class MainActivity extends Activity {
     private BluetoothAdapter mBluetoothAdapter=null;
     private BluetoothService mBluetoothService=null;
     private String mConnectedDeviceName;
-    private ScheduledExecutorService mExecuter=null;
+    private SharedPreferences reference;
+    @SuppressWarnings("unused")
+	private ScheduledExecutorService mExecuter=null;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		if(D) Log.e(TAG, "+++ ON CREATE +++");
+		
+		getActionBar().setBackgroundDrawable(getWallpaper());
 		setContentView(R.layout.activity_main);
 		
 		mBluetoothAdapter=BluetoothAdapter.getDefaultAdapter();
@@ -47,6 +57,7 @@ public class MainActivity extends Activity {
 			Toast.makeText(this, "手机不支持蓝牙", Toast.LENGTH_LONG).show();
 			return;
 		}
+		reference=PreferenceManager.getDefaultSharedPreferences(MainActivity.this);
 		setControlButtonListener();
 		
 	}
@@ -99,7 +110,9 @@ public class MainActivity extends Activity {
 		public boolean onTouch(View v, MotionEvent event) {
 			// TODO Auto-generated method stub
 			Log.d(TAG, "upLstener touch");
-			sendMessage(Constant.UP);
+			
+			String up=reference.getString("pref_key_up_commond", Constant.UP);
+			sendMessage(up);
 			
 			return false;
 		}
@@ -110,8 +123,9 @@ public class MainActivity extends Activity {
 		@Override
 		public boolean onTouch(View v, MotionEvent event) {
 			// TODO Auto-generated method stub
-			Log.d(TAG, "downLstener touch");
-			sendMessage(Constant.DOWN);
+			Log.d(TAG, "downListener touch");
+			String down=reference.getString("pref_key_down_commond", Constant.DOWN);
+			sendMessage(down);
 			
 			return false;
 		}
@@ -121,8 +135,9 @@ public class MainActivity extends Activity {
 		@Override
 		public boolean onTouch(View v, MotionEvent event) {
 			// TODO Auto-generated method stub
-			Log.d(TAG, "leftLstener touch");
-			sendMessage(Constant.LEFT);
+			Log.d(TAG, "leftListener touch");
+			String left=reference.getString("pref_key_left_commond", Constant.LEFT);
+			sendMessage(left);
 			
 			return false;
 		}
@@ -132,8 +147,9 @@ public class MainActivity extends Activity {
 		@Override
 		public boolean onTouch(View v, MotionEvent event) {
 			// TODO Auto-generated method stub
-			Log.d(TAG, "rightLstener touch");
-			sendMessage(Constant.RIGHT);
+			Log.d(TAG, "rightListener touch");
+			String right=reference.getString("pref_key_right_commond", Constant.RIGHT);
+			sendMessage(right);
 			
 			return false;
 		}
@@ -143,8 +159,9 @@ public class MainActivity extends Activity {
 		@Override
 		public boolean onTouch(View v, MotionEvent event) {
 			// TODO Auto-generated method stub
-			Log.d(TAG, "stopLstener touch");
-			sendMessage(Constant.STOP);
+			Log.d(TAG, "stopListener touch");
+			String stop=reference.getString("pref_key_stop_commond", Constant.STOP);
+			sendMessage(stop);
 			
 			return false;
 		}
@@ -208,8 +225,8 @@ public class MainActivity extends Activity {
 		}
 		if(message.length()>0){			
 			// TODO Auto-generated method stub
-			byte[] buffer=message.getBytes();
-			
+//			byte[] buffer=message.getBytes();
+			byte[] buffer=BytesUtils.hexStringToByte(message);
 			if(buffer!=null)
 				mBluetoothService.write(buffer);		
 		}
@@ -250,8 +267,16 @@ public class MainActivity extends Activity {
 			intent.setClass(this, DevicesActivity.class);
 			startActivityForResult(intent,REQUEST_CONNECT_DEVICE);
 			return true;
-		case R.id.action_settings:
+		case R.id.action_discoverable:
 			ensureDiscoverable();
+			return true;
+		case R.id.action_settings:
+			intent=new Intent();
+			intent.setClass(this, SettingsActivity.class);
+			startActivity(intent);
+			return true;
+		case R.id.action_exit:
+			finish();
 			return true;
 		}
 		return false;

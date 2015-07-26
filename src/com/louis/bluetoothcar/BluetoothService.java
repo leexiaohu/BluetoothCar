@@ -26,7 +26,8 @@ public class BluetoothService extends Service {
 	private static final UUID SerialPortServiceClass_UUID =UUID
 			.fromString("00001101-0000-1000-8000-00805F9B34FB");
 	//UUID
-    private static final UUID uuid=UUID
+    @SuppressWarnings("unused")
+	private static final UUID uuid=UUID
     		.fromString("fa87c0d0-afac-11de-8a39-0800200c9a66");
     
     //Member filed
@@ -62,7 +63,7 @@ public class BluetoothService extends Service {
 		this.state = state;
 		//状态改变时发送给通知Handler
 		mHandler.obtainMessage(Constant.MESSAGE_STATE_CHANGE, 
-						state, -1).sendToTarget();
+	 					state, -1).sendToTarget();
 	}
 
 	
@@ -147,6 +148,7 @@ public class BluetoothService extends Service {
 			int bytes;
 			while(true){
 				try {
+//					int size=inputstream.available();
 					bytes=inputstream.read(buffer);
 					mHandler.obtainMessage(Constant.MESSAGE_READ, bytes, -1, buffer)
 	                	.sendToTarget();
@@ -161,6 +163,12 @@ public class BluetoothService extends Service {
 		public void write(byte[] buffer){
 			try {
 				outputstream.write(buffer);
+				try {
+					Thread.sleep(10);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
                 // Share the sent message back to the UI Activity
                 mHandler.obtainMessage(Constant.MESSAGE_WRITE, -1, -1, buffer)
                         .sendToTarget();

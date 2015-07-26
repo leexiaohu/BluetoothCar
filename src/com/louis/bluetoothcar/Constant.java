@@ -19,12 +19,12 @@ public class Constant {
     public static final int STATE_CONNECTING = 2; // now initiating an outgoing connection
     public static final int STATE_CONNECTED = 3;  // now connected to a remote device
     
-    //方向信息
-    public static final String STOP="0";
-    public static final String UP="1";
-    public static final String DOWN="2";
-    public static final String LEFT="3";
-    public static final String RIGHT="4";
+    //控制信息
+    public static final String STOP="50 01 02 70";
+    public static final String UP="50 01 02 7A";
+    public static final String DOWN="50 01 02 7B";
+    public static final String LEFT="50 01 02 7C";
+    public static final String RIGHT="50 01 02 7D";
     
     
 }
