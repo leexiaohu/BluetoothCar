@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <PreferenceCategory
+       	android:title="@string/title_settings_system"
+       	android:key="pref_key_settings_system" >
+        <CheckBoxPreference
+            android:key="pref_key_allow_typedefine_commond"
+            android:title="@string/title_allow_typedefine_commond"/>
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="@string/title_setting_commond"
+        android:key="pref_key_setting_commond">
+	    <EditTextPreference
+	        android:capitalize="words"
+	        android:defaultValue="@string/pref_default_up_commond"	        
+	        android:inputType="textCapWords"
+	        android:key="pref_key_up_commond"
+	        android:maxLines="1"
+	        android:selectAllOnFocus="true"
+	        android:singleLine="true"
+	        android:title="@string/pref_title_up_commond" />
+	    <EditTextPreference
+	        android:capitalize="words"
+	        android:defaultValue="@string/pref_default_down_commond"	        
+	        android:inputType="textCapWords"
+	        android:key="pref_key_down_commond"
+	        android:maxLines="1"
+	        android:selectAllOnFocus="true"
+	        android:singleLine="true"
+	        android:title="@string/pref_title_down_commond" />
+	    <EditTextPreference
+	        android:capitalize="words"
+	        android:defaultValue="@string/pref_default_left_commond"
+	        android:inputType="textCapWords"
+	        android:key="pref_key_left_commond"
+	        android:maxLines="1"
+	        android:selectAllOnFocus="true"
+	        android:singleLine="true"
+	        android:title="@string/pref_title_left_commond" />
+	    <EditTextPreference
+	        android:capitalize="words"
+	        android:defaultValue="@string/pref_default_right_commond"
+	        android:inputType="textCapWords"
+	        android:key="pref_key_right_commond"
+	        android:maxLines="1"
+	        android:selectAllOnFocus="true"
+	        android:singleLine="true"
+	        android:title="@string/pref_title_right_commond" />
+	    <EditTextPreference
+	        android:capitalize="words"
+	        android:defaultValue="@string/pref_default_stop_commond"
+	        android:inputType="textCapWords"
+	        android:key="pref_key_stop_commond"
+	        android:maxLines="1"
+	        android:selectAllOnFocus="true"
+	        android:singleLine="true"
+	        android:title="@string/pref_title_stop_commond" />
+    </PreferenceCategory>
+    
+
+</PreferenceScreen>

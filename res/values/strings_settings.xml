@@ -1,0 +1,17 @@
+<resources>
+
+	<string name="title_setting_commond">控制命令配置(16进制字符串：XX XX XX XX)</string>
+	<string name="title_settings_system">系统设置</string>
+	<string name="title_allow_typedefine_commond">允许自定义命令</string>
+	<string name="pref_title_up_commond">前进</string>
+	<string name="pref_default_up_commond">50 01 02 7A</string>
+	<string name="pref_title_down_commond">后退</string>
+	<string name="pref_default_down_commond">50 01 02 7B</string>
+	<string name="pref_title_left_commond">左转</string>
+	<string name="pref_default_left_commond">50 01 02 7C</string>
+	<string name="pref_title_right_commond">右转</string>
+	<string name="pref_default_right_commond">50 01 02 7D</string>
+	<string name="pref_title_stop_commond">停止</string>
+	<string name="pref_default_stop_commond">50 01 02 70</string>
+	
+</resources>
